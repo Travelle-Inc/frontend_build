@@ -127,3 +127,35 @@
 .carousel-nav.right {
     right: 0;
 }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 767px) {
+    .carousel-container {
+        padding: 0 8px;
+    }
+
+    .carousel-viewport {
+        max-width: 100%;
+    }
+
+    .carousel-nav {
+        display: none;
+    }
+
+    .recent-search-item-compact {
+        min-width: 220px;
+    }
+
+    .search-thumb {
+        width: 50px;
+        height: 50px;
+    }
+
+    .search-route {
+        font-size: 0.8rem;
+    }
+
+    .search-meta {
+        font-size: 0.7rem;
+    }
+}

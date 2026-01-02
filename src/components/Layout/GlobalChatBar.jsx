@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, Sparkles } from 'lucide-react';
+import { Send, Sparkles, X } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import './GlobalChatBar.css';
 
@@ -8,11 +8,13 @@ const GlobalChatBar = ({
     onChatStart,
     isPrimarySidebarCollapsed,
     hasSecondarySidebar,
-    isSecondarySidebarCollapsed
+    isSecondarySidebarCollapsed,
+    isMobile = false
 }) => {
     const { user, isAuthenticated } = useAuth();
     const [inputValue, setInputValue] = useState('');
     const [placeholderIndex, setPlaceholderIndex] = useState(0);
+    const [isFabExpanded, setIsFabExpanded] = useState(false);
     const textareaRef = useRef(null);
 
     // Context-aware placeholder messages based on active tab
@@ -141,6 +143,84 @@ const GlobalChatBar = ({
         }
     };
 
+    const handleFabClick = () => {
+        setIsFabExpanded(true);
+    };
+
+    const handleFabClose = () => {
+        setIsFabExpanded(false);
+        setInputValue('');
+    };
+
+    const handleMobileSend = () => {
+        if (inputValue.trim()) {
+            if (onChatStart) onChatStart();
+            setInputValue('');
+            setIsFabExpanded(false);
+        }
+    };
+
+    // Mobile FAB version
+    if (isMobile) {
+        return (
+            <>
+                {/* FAB Button */}
+                {!isFabExpanded && (
+                    <button
+                        className="global-chat-fab"
+                        onClick={handleFabClick}
+                        aria-label="Open Journii AI chat"
+                    >
+                        <Sparkles size={24} />
+                    </button>
+                )}
+
+                {/* Expanded chat input (bottom sheet style) */}
+                {isFabExpanded && (
+                    <>
+                        <div className="fab-backdrop" onClick={handleFabClose} />
+                        <div className="fab-expanded-container">
+                            <div className="fab-expanded-header">
+                                <div className="fab-header-icon">
+                                    <Sparkles size={20} />
+                                </div>
+                                <span>Ask Journii AI</span>
+                                <button className="fab-close-btn" onClick={handleFabClose}>
+                                    <X size={20} />
+                                </button>
+                            </div>
+                            <div className="fab-input-wrapper">
+                                <textarea
+                                    ref={textareaRef}
+                                    className="fab-chat-input"
+                                    placeholder={currentPlaceholder}
+                                    value={inputValue}
+                                    onChange={(e) => setInputValue(e.target.value)}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter' && !e.shiftKey) {
+                                            e.preventDefault();
+                                            handleMobileSend();
+                                        }
+                                    }}
+                                    rows={3}
+                                    autoFocus
+                                />
+                                <button
+                                    className={`fab-send-btn ${inputValue.trim() ? 'active' : ''}`}
+                                    onClick={handleMobileSend}
+                                    disabled={!inputValue.trim()}
+                                >
+                                    <Send size={20} />
+                                </button>
+                            </div>
+                        </div>
+                    </>
+                )}
+            </>
+        );
+    }
+
+    // Desktop version
     return (
         <div className={`global-chat-bar ${getPositionClass()}`}>
             <div className="global-chat-container">
@@ -156,7 +236,7 @@ const GlobalChatBar = ({
                     onKeyDown={handleKeyDown}
                     rows={1}
                 />
-                <button 
+                <button
                     className={`global-chat-send ${inputValue.trim() ? 'active' : ''}`}
                     onClick={handleSend}
                     disabled={!inputValue.trim()}

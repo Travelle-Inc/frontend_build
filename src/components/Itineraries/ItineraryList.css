@@ -288,3 +288,79 @@
     background-color: #fce7f3;
     color: #be185d;
 }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 767px) {
+    .itinerary-list-container {
+        padding: var(--spacing-md);
+        padding-bottom: calc(var(--bottom-nav-height) + var(--safe-area-bottom) + var(--spacing-md));
+    }
+
+    .itinerary-header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .header-left h1 {
+        font-size: 1.4rem;
+    }
+
+    .new-itinerary-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .filter-tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 4px;
+        margin-bottom: 20px;
+    }
+
+    .filter-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-tab {
+        white-space: nowrap;
+    }
+
+    /* Card: Stack vertically on mobile */
+    .itinerary-card {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .itin-image-wrapper {
+        width: 100%;
+        height: 160px;
+    }
+
+    .itin-content {
+        padding: var(--spacing-md);
+    }
+
+    .itin-title {
+        font-size: 1rem;
+    }
+
+    .itin-meta-row {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .itin-footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .draft-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .draft-actions .btn-link {
+        width: 100%;
+        justify-content: center;
+    }
+}

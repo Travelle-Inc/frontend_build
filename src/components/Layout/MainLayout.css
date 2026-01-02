@@ -1,9 +1,20 @@
+/* ===== MAIN LAYOUT - MOBILE FIRST ===== */
 .main-layout {
     display: flex;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for mobile */
     width: 100vw;
     overflow: hidden;
     background-color: var(--bg-page);
+}
+
+/* Mobile: No sidebar, account for bottom nav */
+.main-layout.mobile {
+    flex-direction: column;
+}
+
+.main-layout.mobile .content-area {
+    padding-bottom: calc(var(--bottom-nav-height) + var(--safe-area-bottom));
 }
 
 .content-area {
@@ -15,6 +26,8 @@
     overflow-x: hidden;
     height: 100%;
     scroll-behavior: smooth;
+    /* Mobile: Full width */
+    width: 100%;
 }
 
 /* Ensure content scrolls smoothly */
@@ -33,4 +46,15 @@
 
 .content-area::-webkit-scrollbar-thumb:hover {
     background: #cbd5e1;
+}
+
+/* ===== TABLET+ ADJUSTMENTS ===== */
+@media (min-width: 768px) {
+    .main-layout {
+        flex-direction: row;
+    }
+
+    .main-layout.mobile .content-area {
+        padding-bottom: 0;
+    }
 }

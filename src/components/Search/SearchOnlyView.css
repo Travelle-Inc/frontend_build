@@ -1,6 +1,7 @@
 .search-only-view {
     width: 100%;
     height: 100vh;
+    height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,5 +21,19 @@
 
 .recent-searches-section {
     width: 100%;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 767px) {
+    .search-only-view {
+        padding: var(--spacing-md);
+        padding-bottom: calc(var(--bottom-nav-height) + var(--safe-area-bottom) + var(--spacing-md));
+        align-items: flex-start;
+        padding-top: var(--spacing-lg);
+    }
+
+    .search-only-container {
+        gap: var(--spacing-md);
+    }
 }
 

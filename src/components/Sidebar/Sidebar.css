@@ -1,22 +1,32 @@
+/* ===== SIDEBAR - Hidden on mobile, shown on tablet+ ===== */
 .sidebar {
-    height: 100vh; /* Full viewport height - completely fixed */
+    height: 100vh;
+    height: 100dvh;
     background-color: var(--sidebar-bg);
     border-right: 1px solid var(--border-subtle);
-    display: flex;
+    display: none; /* Hidden on mobile by default */
     flex-direction: column;
     transition: width 0.3s ease;
     padding: var(--spacing-md);
-    z-index: 100;
+    z-index: var(--z-dropdown);
     position: relative;
-    overflow: hidden; /* No scrolling - sidebar is completely fixed */
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* Tablet+: Show sidebar */
+@media (min-width: 768px) {
+    .sidebar {
+        display: flex;
+    }
 }
 
 .sidebar.expanded {
-    width: 260px;
+    width: var(--sidebar-width-expanded);
 }
 
 .sidebar.collapsed {
-    width: 80px;
+    width: var(--sidebar-width-collapsed);
     align-items: center;
 }
 

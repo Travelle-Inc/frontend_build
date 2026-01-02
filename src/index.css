@@ -3,10 +3,8 @@
 :root {
   /* Colors */
   --primary-blue: #007bff;
-  /* Bright blue like the logo */
   --primary-blue-hover: #0056b3;
   --bg-page: #f5f7fa;
-  /* Very light cool grey */
   --surface-white: #ffffff;
   --sidebar-bg: #ffffff;
   --text-main: #1a1a1a;
@@ -14,15 +12,51 @@
   --text-muted: #a0a0a0;
   --border-subtle: #e5e7eb;
 
-  /* Spacing */
+  /* ===== RESPONSIVE DESIGN SYSTEM (Mobile-First) ===== */
+
+  /* Breakpoint reference (use in media queries, not as variables) */
+  /* Mobile: < 768px (base styles) */
+  /* Tablet: >= 768px */
+  /* Desktop: >= 1024px */
+  /* Large Desktop: >= 1280px */
+
+  /* Spacing - Mobile first (smaller values) */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.5rem;
+
+  /* Container padding - responsive */
+  --container-padding: 1rem;
+
+  /* Sidebar widths */
+  --sidebar-width-collapsed: 0px;
+  --sidebar-width-expanded: 0px;
+  --secondary-sidebar-width: 0px;
+
+  /* Bottom nav height for mobile */
+  --bottom-nav-height: 64px;
+
+  /* Safe area insets for mobile (notches, home indicators) */
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-top: env(safe-area-inset-top, 0px);
+
+  /* Touch-friendly minimum sizes */
+  --touch-target-min: 44px;
+
+  /* FAB size for mobile chat */
+  --fab-size: 56px;
 
   /* Typography */
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.85rem;
+  --font-size-base: 0.95rem;
+  --font-size-lg: 1.1rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-hero: 1.75rem;
 
   /* Radius */
   --radius-sm: 6px;
@@ -34,8 +68,6 @@
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-
-  /* Modern Effects - Enhanced Shadows */
   --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.15);
   --shadow-button-hover: 0 6px 16px rgba(0, 0, 0, 0.12);
   --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.12);
@@ -51,6 +83,46 @@
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Z-index layers */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-drawer: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-fab: 600;
+  --z-bottom-nav: 700;
+  --z-toast: 800;
+}
+
+/* ===== TABLET BREAKPOINT (768px+) ===== */
+@media (min-width: 768px) {
+  :root {
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --container-padding: 1.5rem;
+    --sidebar-width-collapsed: 80px;
+    --sidebar-width-expanded: 260px;
+    --secondary-sidebar-width: 280px;
+    --bottom-nav-height: 0px;
+    --font-size-hero: 2rem;
+  }
+}
+
+/* ===== DESKTOP BREAKPOINT (1024px+) ===== */
+@media (min-width: 1024px) {
+  :root {
+    --container-padding: 2rem;
+  }
+}
+
+/* ===== LARGE DESKTOP BREAKPOINT (1280px+) ===== */
+@media (min-width: 1280px) {
+  :root {
+    --container-padding: 2.5rem;
+  }
 }
 
 * {
@@ -95,4 +167,152 @@ button {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+/* ===== RESPONSIVE UTILITY CLASSES ===== */
+
+/* Hide on mobile, show on tablet+ */
+.hide-mobile {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .hide-mobile {
+    display: initial !important;
+  }
+
+  .show-mobile-only {
+    display: none !important;
+  }
+}
+
+/* Show only on mobile */
+.show-mobile-only {
+  display: initial;
+}
+
+/* Hide on desktop */
+.hide-desktop {
+  display: initial;
+}
+
+@media (min-width: 1024px) {
+  .hide-desktop {
+    display: none !important;
+  }
+
+  .show-desktop-only {
+    display: initial !important;
+  }
+}
+
+.show-desktop-only {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .show-desktop-only {
+    display: initial;
+  }
+}
+
+/* Touch-friendly tap targets */
+.touch-target {
+  min-width: var(--touch-target-min);
+  min-height: var(--touch-target-min);
+}
+
+/* Mobile-safe viewport height */
+.h-screen-safe {
+  height: 100vh;
+  height: 100dvh; /* Dynamic viewport height - accounts for mobile browser chrome */
+}
+
+/* Overlay backdrop for drawers/modals */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: var(--z-drawer);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.drawer-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Slide-in drawer from right */
+.slide-drawer-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 320px;
+  background: var(--surface-white);
+  z-index: calc(var(--z-drawer) + 1);
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.slide-drawer-right.open {
+  transform: translateX(0);
+}
+
+/* Slide-in drawer from left (for hamburger menu) */
+.slide-drawer-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 300px;
+  background: var(--surface-white);
+  z-index: calc(var(--z-drawer) + 1);
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.slide-drawer-left.open {
+  transform: translateX(0);
+}
+
+/* Prevent body scroll when drawer is open */
+body.drawer-open {
+  overflow: hidden;
+}
+
+/* Bottom sheet style for mobile */
+.bottom-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--surface-white);
+  z-index: var(--z-modal);
+  border-radius: 20px 20px 0 0;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding-bottom: var(--safe-area-bottom);
+}
+
+.bottom-sheet.open {
+  transform: translateY(0);
+}
+
+.bottom-sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: var(--border-subtle);
+  border-radius: 2px;
+  margin: 12px auto;
 }

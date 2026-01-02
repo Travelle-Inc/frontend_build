@@ -1,13 +1,20 @@
-/* Hotel Secondary Sidebar */
+/* ===== HOTEL SECONDARY SIDEBAR - Hidden on mobile ===== */
 .hotel-secondary-sidebar {
     width: 300px;
     min-width: 300px;
     max-width: 300px;
     height: 100%;
     background-color: white;
-    display: flex;
+    display: none; /* Hidden on mobile by default */
     flex-direction: column;
     overflow-y: auto;
+}
+
+/* Tablet+: Show sidebar */
+@media (min-width: 768px) {
+    .hotel-secondary-sidebar {
+        display: flex;
+    }
 }
 
 .hotel-filters-section {

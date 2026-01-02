@@ -90,7 +90,7 @@
 }
 
 /* ==================== */
-/* SECONDARY SIDEBAR */
+/* SECONDARY SIDEBAR - Hidden on mobile */
 /* ==================== */
 
 .results-secondary-sidebar {
@@ -99,9 +99,16 @@
     max-width: 300px;
     height: 100%;
     background-color: white;
-    display: flex;
+    display: none; /* Hidden on mobile by default */
     flex-direction: column;
     overflow-y: auto;
+}
+
+/* Tablet+: Show sidebar */
+@media (min-width: 768px) {
+    .results-secondary-sidebar {
+        display: flex;
+    }
 }
 
 .sidebar-divider {
@@ -483,5 +490,54 @@
 @media (max-width: 768px) {
     .flight-results-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 767px) {
+    .search-bar-persistent {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .search-fields-row {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .search-field {
+        width: 100%;
+    }
+
+    .travelers-class {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .travelers-input {
+        width: 100%;
+    }
+
+    .search-button-persistent {
+        width: 100%;
+        margin-top: var(--spacing-sm);
+    }
+
+    .results-info-bar {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .results-info-bar .info-row {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        align-items: flex-start;
+    }
+
+    .flight-results-main {
+        padding: var(--spacing-md);
+        padding-bottom: calc(var(--bottom-nav-height) + var(--safe-area-bottom) + var(--spacing-md));
+    }
+
+    .flight-results-grid {
+        gap: var(--spacing-md);
     }
 }

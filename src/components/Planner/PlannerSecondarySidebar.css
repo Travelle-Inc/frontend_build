@@ -1,14 +1,22 @@
+/* ===== PLANNER SECONDARY SIDEBAR - Hidden on mobile ===== */
 .planner-secondary-sidebar {
     width: 280px;
     background-color: var(--surface-white);
     border-right: 1px solid var(--border-subtle);
-    display: flex;
+    display: none; /* Hidden on mobile by default */
     flex-direction: column;
     height: 100%;
     padding: var(--spacing-md);
     flex-shrink: 0;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+/* Tablet+: Show sidebar */
+@media (min-width: 768px) {
+    .planner-secondary-sidebar {
+        display: flex;
+    }
 }
 
 .planner-secondary-sidebar::-webkit-scrollbar {

@@ -89,3 +89,37 @@
     font-size: 0.8rem;
     color: var(--text-muted);
 }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 767px) {
+    .flight-card {
+        padding: var(--spacing-sm);
+        gap: var(--spacing-sm);
+    }
+
+    .flight-row {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .airline-name {
+        font-size: 0.85rem;
+    }
+
+    .details-row {
+        font-size: 0.85rem;
+    }
+
+    .time {
+        font-size: 0.9rem;
+    }
+
+    .price-tag {
+        font-size: 1.1rem;
+    }
+
+    .book-btn {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+}

@@ -125,3 +125,41 @@
     font-size: 0.75rem;
     color: var(--text-muted);
 }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 767px) {
+    .hotel-card {
+        flex-direction: column;
+        padding: var(--spacing-sm);
+    }
+
+    .hotel-image-container {
+        width: 100%;
+        height: 160px;
+    }
+
+    .hotel-details {
+        padding: var(--spacing-sm) 0;
+    }
+
+    .hotel-title {
+        font-size: 0.95rem;
+    }
+
+    .hotel-description {
+        font-size: 0.8rem;
+    }
+
+    .hotel-tags {
+        gap: 6px;
+    }
+
+    .hotel-tag {
+        font-size: 0.65rem;
+        padding: 3px 6px;
+    }
+
+    .hotel-price {
+        font-size: 1rem;
+    }
+}

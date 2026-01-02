@@ -360,6 +360,7 @@
 @media (max-width: 768px) {
     .membership-container {
         padding: 24px 16px;
+        padding-bottom: calc(var(--bottom-nav-height) + var(--safe-area-bottom) + 24px);
     }
 
     .membership-header h1 {
@@ -391,5 +392,38 @@
 
     .faq-answer {
         padding: 0 16px 16px 16px;
+    }
+}
+
+/* ===== MOBILE SPECIFIC ===== */
+@media (max-width: 767px) {
+    .membership-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .membership-header p {
+        font-size: 0.95rem;
+    }
+
+    .pricing-card {
+        padding: 24px 16px;
+    }
+
+    .card-header h3 {
+        font-size: 1.25rem;
+    }
+
+    .price {
+        font-size: 2rem;
+    }
+
+    /* Comparison table: horizontal scroll */
+    .comparison-section {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .comparison-table {
+        min-width: 600px;
     }
 }

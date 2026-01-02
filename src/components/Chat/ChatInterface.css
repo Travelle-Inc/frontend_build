@@ -370,3 +370,77 @@
     margin-top: auto;
     border-top: 1px solid var(--border-subtle);
 }
+
+/* ===== MOBILE RESPONSIVE STYLES ===== */
+@media (max-width: 767px) {
+    .chat-scroll-area {
+        padding: var(--spacing-md);
+    }
+
+    .empty-state-container {
+        gap: var(--spacing-md);
+    }
+
+    .hero-logo-img {
+        max-width: 280px;
+        margin-bottom: -60px;
+        margin-top: -50px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        padding: 0 var(--spacing-sm);
+    }
+
+    /* Suggestions: 2 columns on mobile */
+    .suggestions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .suggestion-card {
+        height: 140px;
+    }
+
+    .card-content h3 {
+        font-size: 0.9rem;
+    }
+
+    .card-content p {
+        font-size: 0.75rem;
+    }
+
+    /* Quick actions: wrap on mobile */
+    .quick-actions-row {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .quick-action-btn {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+
+    /* Split view: stack on mobile */
+    .chat-interface.split-view {
+        flex-direction: column;
+    }
+
+    .map-column {
+        height: 200px;
+        flex: none;
+    }
+
+    .message-bubble {
+        max-width: 95%;
+        padding: var(--spacing-md);
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+    }
+}

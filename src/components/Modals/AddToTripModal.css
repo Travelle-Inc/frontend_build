@@ -149,3 +149,16 @@
     font-size: 0.75rem;
     color: #94a3b8;
 }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 767px) {
+    .modal-content {
+        width: 95%;
+        max-width: none;
+        margin: var(--spacing-md);
+    }
+
+    .modal-body {
+        max-height: 70vh;
+    }
+}

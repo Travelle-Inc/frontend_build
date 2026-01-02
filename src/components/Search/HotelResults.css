@@ -77,3 +77,34 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 767px) {
+    .hotel-results-container {
+        padding: var(--spacing-md);
+        padding-bottom: calc(var(--bottom-nav-height) + var(--safe-area-bottom) + var(--spacing-md));
+    }
+
+    .results-top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .results-heading {
+        font-size: 1.25rem;
+    }
+
+    .view-toggles {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .view-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .hotel-results-grid {
+        gap: var(--spacing-md);
+    }
+}
