@@ -1,0 +1,395 @@
+.membership-container {
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: var(--bg-main);
+}
+
+.membership-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.membership-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.membership-header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* Pricing Cards */
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 32px 24px;
+    border: 2px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: var(--tier-color);
+}
+
+.pricing-card.highlighted {
+    border-color: var(--primary-blue);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
+}
+
+.pricing-card.highlighted::before {
+    content: 'MOST POPULAR';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-blue);
+    color: white;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.tier-icon {
+    color: var(--tier-color);
+    margin-bottom: 12px;
+}
+
+.card-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+
+.tier-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.card-price {
+    text-align: center;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    display: block;
+}
+
+.period {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-top: 4px;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    flex: 1;
+}
+
+.features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.check-icon {
+    color: #22c55e;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.limitations {
+    background: #fef2f2;
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    margin-bottom: 24px;
+}
+
+.limitations-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #dc2626;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+}
+
+/* VIP Banner */
+.vip-banner {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    text-align: center;
+    margin-bottom: 48px;
+    color: white;
+}
+
+.vip-banner h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.vip-banner p {
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+    opacity: 0.95;
+}
+
+.vip-cta-button {
+    padding: 14px 32px;
+    background: white;
+    color: #667eea;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.vip-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Comparison Section */
+.comparison-section {
+    margin-bottom: 48px;
+}
+
+.comparison-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.comparison-table-wrapper {
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-subtle);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.comparison-table thead {
+    background: linear-gradient(135deg, #f8f9ff 0%, #e6f2ff 100%);
+}
+
+.comparison-table th {
+    padding: 20px 16px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-main);
+    border-bottom: 2px solid var(--border-subtle);
+}
+
+.comparison-table th:first-child {
+    text-align: left;
+}
+
+.comparison-table th svg {
+    display: block;
+    margin: 0 auto 8px;
+}
+
+.comparison-table th span {
+    display: block;
+    font-size: 0.9rem;
+}
+
+.comparison-table tbody tr {
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.comparison-table tbody tr:hover {
+    background: #f8f9ff;
+}
+
+.comparison-table td {
+    padding: 16px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.comparison-table td.feature-name {
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.comparison-table td.club-cell {
+    color: #eab308;
+    font-weight: 600;
+}
+
+/* FAQ Section */
+.faq-section {
+    margin-bottom: 48px;
+}
+
+.faq-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: var(--radius-md);
+    margin-bottom: 12px;
+    border: 1px solid var(--border-subtle);
+    overflow: hidden;
+    transition: all 0.2s;
+}
+
+.faq-item:hover {
+    border-color: var(--primary-blue);
+}
+
+.faq-item.open {
+    border-color: var(--primary-blue);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px 24px;
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    text-align: left;
+    transition: all 0.2s;
+}
+
+.faq-question:hover {
+    color: var(--primary-blue);
+}
+
+.faq-answer {
+    padding: 0 24px 20px 24px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .pricing-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .membership-container {
+        padding: 24px 16px;
+    }
+
+    .membership-header h1 {
+        font-size: 2rem;
+    }
+
+    .pricing-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .vip-banner {
+        padding: 32px 24px;
+    }
+
+    .vip-banner h2 {
+        font-size: 1.5rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 12px 8px;
+        font-size: 0.8rem;
+    }
+
+    .faq-question {
+        padding: 16px;
+        font-size: 0.9rem;
+    }
+
+    .faq-answer {
+        padding: 0 16px 16px 16px;
+    }
+}

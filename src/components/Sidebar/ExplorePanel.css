@@ -1,0 +1,76 @@
+.explore-panel {
+    position: absolute;
+    top: 220px;
+    left: 100%;
+    margin-left: 10px;
+    width: 240px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    padding: 8px 0;
+    z-index: 1000;
+    overflow: hidden;
+    transform-origin: top left;
+}
+
+.explore-close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.explore-close-btn:hover {
+    background-color: #f1f5f9;
+    color: #64748b;
+}
+
+.explore-items-container {
+    padding-top: 12px;
+    /* Space for the close button if needed, or just generally */
+}
+
+.explore-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #334155;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.explore-item:hover {
+    background-color: #f1f5f9;
+    color: #1e3a8a;
+}
+
+.explore-item svg {
+    color: #64748b;
+    transition: color 0.2s;
+}
+
+.explore-item:hover svg {
+    color: #1e3a8a;
+}
+
+.explore-item svg.heart-icon {
+    color: #64748b;
+}
+
+.explore-item:hover svg.heart-icon {
+    color: #ef4444;
+}

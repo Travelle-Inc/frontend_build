@@ -1,0 +1,79 @@
+/* Recent Searches Section */
+.recent-searches-section {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.recent-searches-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0 0 var(--spacing-sm) 0;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s;
+}
+
+.recent-searches-header:hover {
+    color: var(--primary-blue);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.recent-searches-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.recent-searches-list.expanded {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.recent-searches-list.collapsed {
+    max-height: 70px;
+    opacity: 1;
+}
+
+.recent-search-item {
+    padding: var(--spacing-sm);
+    background: #f5f7fa;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.recent-search-item:hover {
+    background: #e6f2ff;
+    transform: translateX(4px);
+}
+
+.search-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.search-meta {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.no-searches {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding: var(--spacing-sm);
+}

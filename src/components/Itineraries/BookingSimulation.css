@@ -1,0 +1,249 @@
+.booking-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    backdrop-filter: blur(4px);
+}
+
+.booking-modal {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    max-width: 520px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-booking-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 8px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.close-booking-btn:hover {
+    background: #f1f5f9;
+    color: var(--text-main);
+}
+
+.booking-phase {
+    padding: 32px;
+}
+
+/* Booking Animation Phase */
+.booking-animation-phase h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 24px;
+}
+
+.booking-progress {
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 99px;
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+
+.booking-progress .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-blue), #60a5fa);
+    border-radius: 99px;
+    transition: width 0.3s ease;
+}
+
+.booking-steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.booking-step-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+}
+
+.booking-step-item.active {
+    background: #eff6ff;
+    border-color: var(--primary-blue);
+}
+
+.booking-step-item.done {
+    opacity: 0.7;
+}
+
+.step-emoji {
+    font-size: 1.2rem;
+}
+
+.step-text {
+    flex: 1;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.step-check {
+    color: #10b981;
+}
+
+/* Confirmation Phase */
+.confirmation-phase {
+    text-align: center;
+    padding: 60px 32px;
+}
+
+.success-checkmark {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #10b981, #34d399);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    color: white;
+}
+
+.confirmation-phase h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.confirmation-number {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Summary Phase */
+.summary-phase h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 20px;
+}
+
+.summary-header {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.summary-image {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+}
+
+.summary-info h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+.summary-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.summary-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.summary-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.summary-section {
+    background: #f8fafc;
+    padding: 14px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+}
+
+.summary-section h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.summary-section h4 svg {
+    color: var(--primary-blue);
+}
+
+.summary-section p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.summary-footer {
+    text-align: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.planner-note {
+    font-size: 0.9rem;
+    color: #10b981;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.summary-footer .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.summary-footer .btn-primary:hover {
+    background: var(--primary-blue-hover);
+}
+

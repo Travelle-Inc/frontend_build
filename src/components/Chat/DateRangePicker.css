@@ -1,0 +1,211 @@
+.date-picker-overlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    margin-top: 12px;
+}
+
+/* When rendered in modal with portal */
+.date-picker-overlay.in-modal {
+    position: fixed;
+    z-index: 1100;
+    margin-top: 0;
+}
+
+/* Placement variants */
+.date-picker-overlay.placement-center {
+    /* Centered in viewport */
+    transform: translateY(0);
+}
+
+.date-picker-overlay.placement-top {
+    /* Animation will flip direction */
+}
+
+.date-picker-overlay.placement-bottom {
+    /* Default behavior */
+}
+
+.date-picker-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    padding: 24px;
+    width: 360px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    font-family: 'Inter', sans-serif;
+    max-height: inherit;
+    overflow-y: auto;
+}
+
+/* Enhanced shadow for centered placement */
+.date-picker-overlay.placement-center .date-picker-card {
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+}
+
+.date-picker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.month-year-label {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #1e293b;
+    font-family: 'Outfit', sans-serif;
+}
+
+.nav-btn,
+.close-btn {
+    background: transparent;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover,
+.close-btn:hover {
+    background: #f1f5f9;
+    color: #1e3a8a;
+}
+
+.days-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.days-header span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* Remove gap to make the range bar continuous */
+    row-gap: 4px;
+    column-gap: 0;
+}
+
+.calendar-day-wrapper {
+    position: relative;
+    height: 44px;
+    /* Slightly taller for ease */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+
+.calendar-day.empty {
+    cursor: default;
+}
+
+.day-number {
+    position: relative;
+    z-index: 2;
+    /* Above bg */
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #334155;
+    pointer-events: none;
+    transition: color 0.2s;
+}
+
+.selected-text {
+    color: white;
+    font-weight: 600;
+}
+
+.in-range-text {
+    color: #1e3a8a;
+    /* Dark blue text on light blue bg */
+}
+
+/* Animations Elements */
+.selection-circle {
+    position: absolute;
+    top: 4px;
+    /* Centers in 44px height (36px circle) */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 36px;
+    background-color: #1e3a8a;
+    /* Primary Blue */
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+.range-bg {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    background-color: rgba(224, 231, 255, 0.7);
+    /* Light indigo/blue */
+    z-index: 0;
+}
+
+.range-bg.range-start {
+    border-top-left-radius: 999px;
+    border-bottom-left-radius: 999px;
+    /* Only fill the right half relative to the circle center? 
+       Actually, standard is 50% left margin. 
+       But simplistic approach: border-radius handles the look. 
+       If we want it to start EXACTLY at the circle center, we'd need left: 50%.
+       Let's stick to full cell width with radius for now, looks cleaner usually. */
+}
+
+.range-bg.range-end {
+    border-top-right-radius: 999px;
+    border-bottom-right-radius: 999px;
+}
+
+.date-picker-footer {
+    border-top: 1px solid #e2e8f0;
+    margin-top: 24px;
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selection-info {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.apply-btn {
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 4px 6px rgba(30, 58, 138, 0.2);
+}
+
+.apply-btn:hover {
+    background: #1e40af;
+    transform: translateY(-1px);
+}

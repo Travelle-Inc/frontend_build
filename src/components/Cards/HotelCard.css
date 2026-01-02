@@ -1,0 +1,127 @@
+.hotel-card {
+    display: flex;
+    background-color: #f5f7fa;
+    /* Very light grey */
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: var(--spacing-md);
+    border: 1px solid transparent;
+}
+
+.hotel-image-container {
+    width: 140px;
+    flex-shrink: 0;
+}
+
+.hotel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    /* Image itself slightly rounded in container? Design looks seamlessly rounded left */
+    /* Wait, design shows the image is a rounded rectangle floating inside padding maybe? No, it's touching edge or slightly padded.
+       Looking at "Five Star Hotel" card in 3rd image:
+       There is padding around the card content, and the image is a rounded sqircle inside left.
+    */
+    border-radius: var(--radius-md);
+}
+
+/* Revisiting structure for padding */
+.hotel-card {
+    padding: var(--spacing-sm);
+    /* Internal padding */
+    gap: var(--spacing-md);
+    background-color: #f5f7fa;
+}
+
+
+.hotel-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hotel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.hotel-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+
+.hotel-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.book-btn-small {
+    background-color: var(--primary-blue);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    /* alignment */
+    align-items: center;
+}
+
+/* Wait, in 3rd image it says "Book Now" in BLUE box with icon. */
+
+.save-btn-small {
+    color: var(--text-muted);
+    padding: 4px;
+}
+
+.hotel-description {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    margin-bottom: var(--spacing-sm);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.hotel-tags {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.hotel-tag {
+    background-color: #e2e8f0;
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+}
+
+.hotel-price-block {
+    margin-left: auto;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.hotel-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.hotel-period {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}

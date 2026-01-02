@@ -1,0 +1,167 @@
+.traveler-selector-popup {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 300px;
+    background: white;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+    z-index: 100;
+    max-height: inherit;
+    overflow-y: auto;
+}
+
+/* Enhanced shadow for centered placement */
+.traveler-selector-popup.placement-center {
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* When rendered in modal with portal */
+.traveler-selector-popup.in-modal {
+    position: fixed;
+    z-index: 1100;
+    top: auto;
+    right: auto;
+}
+
+/* Placement variants */
+.traveler-selector-popup.placement-center {
+    /* Centered in viewport */
+    transform: translateY(0);
+}
+
+.traveler-selector-popup.placement-top {
+    /* Animation will flip direction */
+}
+
+.traveler-selector-popup.placement-bottom {
+    /* Default behavior */
+}
+
+.selector-header {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1e3a8a;
+    letter-spacing: -0.01em;
+}
+
+.selector-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* Tighter gap */
+}
+
+.traveler-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 0;
+}
+
+.traveler-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.traveler-type {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #334155;
+    line-height: 1.2;
+}
+
+.traveler-age {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+.counter-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.counter-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    /* Slightly softer corners */
+    border: 1px solid #e2e8f0;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 0;
+}
+
+.counter-btn:hover:not(:disabled) {
+    border-color: #3b82f6;
+    color: #3b82f6;
+    background: #eff6ff;
+}
+
+.counter-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: #f5f7fa;
+    border-color: #f1f5f9;
+}
+
+.counter-value {
+    width: 16px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #1e3a8a;
+}
+
+/* Cabin Class */
+.cabin-class-section {
+    margin-top: 16px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 16px;
+}
+
+.cabin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.cabin-btn {
+    padding: 8px 4px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    color: #64748b;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.cabin-btn:hover:not(.active) {
+    border-color: #cbd5e1;
+    color: #475569;
+}
+
+/* Selected State - More "modern app" feel - maybe blue tint or solid dark */
+.cabin-btn.active {
+    background: #1e3a8a;
+    color: #ffffff;
+    border-color: #1e3a8a;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+}
+
+/* Adjust top margin for less gap */
+.selector-header+.selector-grid {
+    margin-top: -4px;
+}

@@ -1,0 +1,77 @@
+.settings-panel {
+    position: absolute;
+    bottom: 80px;
+    /* Above the sidebar footer */
+    left: 12px;
+    width: 260px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    padding: 8px 0;
+    z-index: 1000;
+    overflow: hidden;
+    transform-origin: bottom left;
+}
+
+.settings-section {
+    padding: 8px 0;
+}
+
+/* Remove padding top for first section if needed */
+.settings-section:first-child {
+    padding-top: 4px;
+}
+
+.section-header {
+    padding: 8px 16px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.settings-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #334155;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.settings-item:hover {
+    background-color: #f1f5f9;
+    color: #1e3a8a;
+}
+
+.settings-item.danger {
+    color: #ef4444;
+}
+
+.settings-item.danger:hover {
+    background-color: #fef2f2;
+}
+
+.divider {
+    height: 1px;
+    background-color: #e2e8f0;
+    margin: 4px 0;
+}
+
+/* Icons within items */
+.settings-item svg {
+    color: #64748b;
+    transition: color 0.2s;
+}
+
+.settings-item:hover svg {
+    color: #1e293b;
+}
+
+.settings-item.danger svg {
+    color: #ef4444;
+}

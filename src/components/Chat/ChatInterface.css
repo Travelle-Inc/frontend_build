@@ -1,0 +1,372 @@
+.chat-interface {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    background-color: var(--bg-page);
+    transition: all 0.3s ease;
+}
+
+.chat-scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-xl) var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-behavior: smooth;
+}
+
+.chat-scroll-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-scroll-area::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-scroll-area::-webkit-scrollbar-thumb {
+    background: var(--border-subtle);
+    border-radius: 4px;
+}
+
+.chat-scroll-area::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* Empty State */
+.empty-state-container {
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-visual {
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.hero-icon-placeholder {
+    font-size: 2rem;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    /* Dark slate */
+    letter-spacing: -1px;
+}
+
+.hero-logo-img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    margin-bottom: -120px;
+    object-fit: contain;
+    margin-top: -100px;
+    filter: drop-shadow(0 0 30px var(--glow-blue));
+    transition: var(--transition-smooth);
+}
+
+.hero-logo-img:hover {
+    filter: drop-shadow(0 0 40px var(--glow-blue-strong));
+}
+
+.hero-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
+/* Suggestions Grid */
+.suggestions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    width: 100%;
+    margin-top: var(--spacing-lg);
+}
+
+.suggestion-card {
+    height: 180px;
+    background-color: #e2e8f0;
+    border-radius: var(--radius-lg);
+    /* Very rounded like images */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-md);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-sm), 0 0 0 var(--glow-blue);
+}
+
+.suggestion-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-card-hover), var(--shadow-glow-subtle);
+}
+
+.card-content {
+    color: white;
+    z-index: 2;
+}
+
+.card-content h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.card-content p {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* Quick Actions */
+.quick-actions-row {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.quick-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 0.9rem;
+    background-color: #e6f2ff;
+    /* Light blue */
+    color: var(--primary-blue);
+    border: 1px solid transparent;
+    transition: var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+.quick-action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-button-hover);
+    background-color: #dbeafe;
+}
+
+.quick-action-btn.secondary {
+    background-color: #fff0f0;
+    /* Light red/pink */
+    color: #e65100;
+    /* Orange-ish */
+}
+
+/* Adjusting to match image 2 roughly:
+   Create Trip: Blue/White bg
+   Collab Room: Red/Pink/White
+   Search: Grey/White
+   I'll stick to a clean look: */
+.quick-action-btn.secondary {
+    background-color: white;
+    color: var(--text-main);
+    border: 1px solid var(--border-subtle);
+}
+
+.quick-action-btn.secondary:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+/* Input Section Wrapper */
+.input-section-wrapper {
+    padding: var(--spacing-md);
+    background: linear-gradient(to top, var(--bg-page) 60%, transparent);
+    width: 100%;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: var(--spacing-md);
+}
+
+/* Search Results Styles */
+.search-results-container {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding-bottom: var(--spacing-xl);
+}
+
+.message-bubble {
+    padding: var(--spacing-lg);
+    background-color: #e6f2ff;
+    border-radius: var(--radius-lg);
+    color: var(--text-main);
+    line-height: 1.5;
+    align-self: flex-start;
+    max-width: 80%;
+    border-bottom-left-radius: 2px;
+    /* Chat bubble effect */
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-top: var(--spacing-md);
+}
+
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.more-flights-btn-row {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-md);
+}
+
+.more-flights-btn {
+    color: var(--primary-blue);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    transition: background 0.2s;
+}
+
+.more-flights-btn:hover {
+    background-color: #e6f2ff;
+}
+
+/* Ensure placeholder images work if offline or blocked, add fallback or styling context */
+.airline-logo {
+    background-color: transparent;
+}
+
+/* Split View Layout */
+.chat-interface.split-view {
+    flex-direction: row;
+    overflow: hidden;
+    /* Contain map */
+}
+
+.chat-content-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 0;
+    position: relative;
+    z-index: 10;
+    background-color: var(--bg-page);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    /* separate from map */
+}
+
+.map-column {
+    flex: 1;
+    height: 100%;
+    background-color: #e2e8f0;
+    position: relative;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #e2e8f0;
+    /* Fallback */
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Google_Maps_Logo_2020.svg/2275px-Google_Maps_Logo_2020.svg.png');
+    /* Temporary placeholder, better use a real map screenshot */
+    background-image: url('https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3522,48.8566,12,0/800x600?access_token=YOUR_ACCESS_TOKEN');
+    /* This won't work without key */
+    /* Let's use a generic map tiling image from a public source or just a screenshot-like image */
+    background-image: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1000&auto=format&fit=crop');
+    /* Map like image */
+    background-size: cover;
+    background-position: center;
+}
+
+.map-overlay-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    z-index: 20;
+}
+
+/* Top Search Bar (Search Mode) */
+.top-search-container {
+    background-color: var(--surface-white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-bottom: 1px solid var(--border-subtle);
+    z-index: 50;
+    /* Ensure it stays top of left column */
+    /* Note: if using flex row split view, this might need to be inside left column or above. 
+       In my JSX, I put it outside the content column? No, let's check placement.
+       Wait, I put it *before* chat-content-column in JSX. 
+       If flex-direction is row (split view), then top-search-container will be a SIDE column on the left...
+       We want it inside the left column, at the top.
+    */
+}
+
+/* Fix for split view direction issues if using flex-row at top level */
+/* Actually, ChatInterface is flex-col by default. 
+   When split-view, it is flex-row.
+   If I have <TopSearch> <LeftCol> <RightCol>, TopSearch becomes a column.
+   Logic error in JSX structure vs CSS.
+   
+   Correction: TopSearch should be INSIDE LeftCol at the top.
+   Refactoring JSX in next step if needed, or CSS fix.
+*/
+
+/* Input Stack (Initial Mode) */
+.input-section-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 0;
+}
+
+.fixed-bottom {
+    /* If we want it pinned */
+    margin-top: auto;
+    border-top: 1px solid var(--border-subtle);
+}

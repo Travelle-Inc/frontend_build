@@ -1,0 +1,91 @@
+.flight-card {
+    background-color: var(--surface-white);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm), 0 4px 0 var(--glow-blue);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    border: 1px solid var(--border-subtle);
+    margin-bottom: var(--spacing-md);
+    transition: var(--transition-smooth);
+}
+
+.flight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover), var(--shadow-glow-subtle);
+}
+
+.flight-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.airline-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.airline-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.airline-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.flight-action {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.book-btn {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 0.85rem;
+    background-color: #e6f2ff;
+    padding: 4px 12px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+}
+
+.book-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-button-hover);
+    background-color: #dbeafe;
+}
+
+.save-btn {
+    color: var(--text-muted);
+}
+
+.details-row {
+    font-size: 0.9rem;
+}
+
+.time {
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.route {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.price-tag {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.fare-class {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}

@@ -1,0 +1,217 @@
+.bucket-list-container {
+    padding: var(--spacing-lg) 40px;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: #f5f7fa;
+    /* Light grey bg like screenshot */
+}
+
+.bucket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.header-left h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+.header-left p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.add-trip-btn {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.add-trip-btn:hover {
+    background-color: var(--primary-blue-hover);
+}
+
+.bucket-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+/* Trip Card */
+.trip-card {
+    background: white;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm), 0 4px 0 var(--glow-blue);
+    transition: var(--transition-smooth);
+}
+
+.trip-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow-blue);
+}
+
+.card-image-wrapper {
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.destination-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.status-badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 99px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.planned {
+    background-color: #f1f5f9;
+    color: #475569;
+}
+
+.status-badge.draft {
+    background-color: #fef9c3;
+    color: #b45309;
+}
+
+.trip-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.trip-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.card-actions {
+    display: flex;
+    gap: 12px;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 16px;
+}
+
+.action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid var(--border-subtle);
+    /* Design shows buttons with borders */
+    background: #f5f7fa;
+    border-radius: var(--radius-sm);
+    color: var(--text-main);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+.action-btn.primary-action {
+    background: #eff6ff;
+    color: var(--primary-blue);
+    border-color: #dbeafe;
+}
+
+.action-btn.primary-action:hover {
+    background: #dbeafe;
+}
+
+/* Create New Placeholder */
+.create-new-card {
+    border: 2px dashed var(--border-subtle);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px;
+    /* Match heuristic height of other cards */
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.2s;
+}
+
+.create-new-card:hover {
+    background-color: #f5f7fa;
+    border-color: var(--primary-blue);
+}
+
+.plus-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    color: var(--text-muted);
+}
+
+.create-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.create-subtext {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}

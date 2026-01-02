@@ -1,0 +1,129 @@
+/* Recent Search Carousel */
+.recent-search-carousel {
+    padding: var(--spacing-md) 0;
+    margin: var(--spacing-lg) 0;
+}
+
+.carousel-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: var(--spacing-sm);
+}
+
+.carousel-container {
+    position: relative;
+    padding: 0 40px;
+}
+
+.carousel-viewport {
+    overflow: hidden;
+    width: 100%;
+    max-width: calc(4 * 268px + 3 * 12px);
+    margin: 0 auto;
+}
+
+.recent-carousel-track-smooth {
+    display: flex;
+    gap: 12px;
+    cursor: grab;
+    user-select: none;
+    will-change: transform;
+}
+
+.recent-carousel-track-smooth:active {
+    cursor: grabbing;
+}
+
+/* Compact Search Item */
+.recent-search-item-compact {
+    display: flex;
+    gap: var(--spacing-sm);
+    background: white;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    flex-shrink: 0;
+    pointer-events: auto;
+    box-shadow: var(--shadow-sm), 0 2px 0 var(--glow-blue);
+}
+
+.recent-search-item-compact:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), var(--shadow-glow-subtle);
+    transform: translateY(-2px) scale(1.02);
+}
+
+.search-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+    pointer-events: none;
+}
+
+.search-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+
+.search-route {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.search-meta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.search-meta svg {
+    flex-shrink: 0;
+    color: var(--primary-blue);
+}
+
+/* Carousel Navigation */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: 1px solid var(--border-subtle);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+}
+
+.carousel-nav:hover {
+    background-color: var(--primary-blue);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-button-hover);
+}
+
+.carousel-nav.left {
+    left: 0;
+}
+
+.carousel-nav.right {
+    right: 0;
+}

@@ -1,0 +1,152 @@
+.planner-secondary-sidebar {
+    width: 280px;
+    background-color: var(--surface-white);
+    border-right: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: var(--spacing-md);
+    flex-shrink: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.planner-secondary-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.planner-secondary-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.planner-secondary-sidebar::-webkit-scrollbar-thumb {
+    background: var(--border-subtle);
+    border-radius: 3px;
+}
+
+.planner-secondary-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #cbd5e1;
+}
+
+.planner-sec-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.planner-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.planner-nav-item:hover {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+}
+
+.planner-nav-item.active {
+    background-color: #f1f5f9;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.pinned-section {
+    margin-bottom: var(--spacing-md);
+}
+
+.pinned-header {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    padding: 0 12px;
+    margin-bottom: 8px;
+}
+
+.pinned-trip {
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    background-color: #eff6ff;
+    color: var(--primary-blue);
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.pinned-trip:hover {
+    background-color: #dbeafe;
+}
+
+.pinned-trip.active {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.pinned-trip.unpinned {
+    background-color: #f1f5f9;
+    color: var(--text-secondary);
+}
+
+.pinned-trip.unpinned:hover {
+    background-color: #e2e8f0;
+}
+
+.pinned-trip span {
+    flex: 1;
+}
+
+.unpin-btn,
+.pin-btn {
+    opacity: 0;
+    background: transparent;
+    border: none;
+    color: currentColor;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.pinned-trip:hover .unpin-btn,
+.pinned-trip:hover .pin-btn {
+    opacity: 1;
+}
+
+.unpin-btn:hover,
+.pin-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.new-plan-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    background: transparent;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-top: auto;
+    transition: all 0.2s;
+}
+
+.new-plan-btn:hover {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+}

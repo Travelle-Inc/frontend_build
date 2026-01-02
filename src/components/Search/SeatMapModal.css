@@ -1,0 +1,358 @@
+/* Overlay */
+.seat-map-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: var(--spacing-lg);
+}
+
+/* Modal Container */
+.seat-map-modal {
+    background: white;
+    border-radius: var(--radius-lg);
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+/* Header */
+.seat-map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-subtle);
+    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+}
+
+.header-content h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.flight-route {
+    margin: 4px 0 0 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    transition: all 0.2s;
+}
+
+.close-button:hover {
+    background-color: #f1f5f9;
+    color: var(--text-main);
+}
+
+/* Legend */
+.seat-legend {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: #f5f7fa;
+    border-bottom: 1px solid var(--border-subtle);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.legend-seat {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid transparent;
+}
+
+/* Aircraft Container */
+.aircraft-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-lg);
+    background: linear-gradient(to bottom, #f5f7fa 0%, #ffffff 50%, #f5f7fa 100%);
+    position: relative;
+}
+
+/* Cockpit */
+.aircraft-cockpit {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.cockpit-shape {
+    width: 80px;
+    height: 40px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border-radius: 50% 50% 0 0;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+}
+
+.cockpit-shape::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+/* Seats Grid */
+.seats-grid {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 2px solid #e2e8f0;
+}
+
+.column-headers {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.header-group {
+    display: flex;
+    gap: 8px;
+}
+
+.header-group span {
+    width: 32px;
+    text-align: center;
+}
+
+.seat-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.row-number {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    width: 20px;
+    text-align: center;
+}
+
+.seat-group {
+    display: flex;
+    gap: 8px;
+}
+
+.aisle {
+    width: 30px;
+}
+
+/* Individual Seats */
+.seat {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+}
+
+.seat-label {
+    opacity: 0.6;
+    font-size: 0.65rem;
+}
+
+/* Seat States */
+.seat.available {
+    background-color: #e6f2ff;
+    border-color: #7dd3fc;
+    color: #0369a1;
+}
+
+.seat.available:hover {
+    background-color: #bae6fd;
+    box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.3);
+}
+
+.seat.premium {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-color: #fbbf24;
+    color: #92400e;
+}
+
+.seat.premium:hover {
+    background: linear-gradient(135deg, #fde68a 0%, #fcd34d 100%);
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3);
+}
+
+.seat.business {
+    background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%);
+    border-color: #a78bfa;
+    color: #5b21b6;
+}
+
+.seat.business:hover {
+    background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 100%);
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.3);
+}
+
+.seat.occupied {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #94a3b8;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.seat.selected {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+    border-color: #1d4ed8 !important;
+    color: white !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4), 0 4px 12px rgba(59, 130, 246, 0.5);
+    transform: scale(1.1);
+}
+
+.seat.selected .seat-label {
+    opacity: 1;
+}
+
+/* Wings */
+.wing-marker {
+    position: absolute;
+    top: 280px;
+    display: flex;
+    align-items: center;
+}
+
+.wing-marker.left-wing {
+    left: 0;
+}
+
+.wing-marker.right-wing {
+    right: 0;
+}
+
+.wing-shape {
+    width: 40px;
+    height: 20px;
+    background: linear-gradient(90deg, transparent 0%, #cbd5e1 50%, transparent 100%);
+    opacity: 0.4;
+}
+
+.left-wing .wing-shape {
+    transform: skewY(-20deg);
+}
+
+.right-wing .wing-shape {
+    transform: skewY(20deg);
+}
+
+/* Footer */
+.seat-map-footer {
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--border-subtle);
+    background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+}
+
+.selection-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selected-seat-display {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.confirm-button {
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+}
+
+.confirm-button:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
+    transform: translateY(-1px);
+}
+
+.no-selection {
+    text-align: center;
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .seat-map-modal {
+        max-width: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    .seat {
+        width: 28px;
+        height: 28px;
+    }
+
+    .seat-legend {
+        gap: var(--spacing-sm);
+    }
+
+    .legend-item {
+        font-size: 0.75rem;
+    }
+}
